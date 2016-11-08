@@ -1,4 +1,4 @@
-angular.module("ngTvShows", ['ui.router'])
+angular.module("ngTvShows", ['ui.router', 'ngMaterial'])
        .config(function ($stateProvider) {
 
          $stateProvider

@@ -1,5 +1,15 @@
-<h1>Movies</h1>
+<md-nav-bar md-selected-nav-item="vm.currentNavItem">
+  <md-nav-item md-nav-href="#movies" name="moviesNav">Add a Movie</md-nav-item>
+  <md-nav-item md-nav-href="#myMovies" name="myMoviesNav">My Movies</md-nav-item>
+</md-nav-bar>
 
-<div ng-repeat="movie in vm.movies">
-  <img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" />
+<div layout="horizontal" layout-wrap>
+  <div ng-repeat="movie in vm.movies">
+    <md-card>
+      <img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" style="width: 10em;"/>
+      <md-card-actions>
+        <md-button class="md-raised">Add Movie</md-button>
+      </md-card-actions>
+    </md-card>
+  </div>
 </div>

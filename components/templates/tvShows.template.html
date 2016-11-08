@@ -1,5 +1,15 @@
-<h1>Tv Shows</h1>
+<md-nav-bar md-selected-nav-item="vm.currentNavItem">
+  <md-nav-item md-nav-href="#tvShows" name="tvShowsNav">Add a Tv Show</md-nav-item>
+  <md-nav-item md-nav-href="#myTvShows" name="myTvShowsNav">My Tv Shows</md-nav-item>
+</md-nav-bar>
 
-<div ng-repeat="tvShow in vm.tvShows">
-  <img src="https://image.tmdb.org/t/p/w500/{{ tvShow.poster_path }}" />
+<div layout="horizontal" layout-wrap>
+  <div ng-repeat="tvShow in vm.tvShows">
+    <md-card>
+      <img class="md-card-image" src="https://image.tmdb.org/t/p/w500/{{ tvShow.poster_path }}" style="width: 10em; margin: 0 auto;" />
+      <md-card-actions>
+        <md-button class="md-raised">Add Show</md-button>
+      </md-card-actions>
+    </md-card>
+  </div>
 </div>
