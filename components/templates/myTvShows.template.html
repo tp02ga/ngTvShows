@@ -7,13 +7,9 @@
 </md-nav-bar>
 
 <div layout="horizontal" layout-wrap>
-  <div ng-repeat="tvShow in vm.tvShows">
+  <div ng-repeat="tvShow in vm.myTvShows">
     <md-card>
       <img class="md-card-image" src="https://image.tmdb.org/t/p/w500/{{ tvShow.poster_path }}" style="width: 10em; margin: 0 auto;" />
-      <md-card-actions>
-        <md-button class="md-raised" ng-click="vm.addTvShow(tvShow)" ng-if="!vm.isInMyTvShowList(tvShow)">Add Show</md-button>
-        <md-button class="md-raised md-warn" ng-click="vm.removeTvShow(tvShow)" ng-if="vm.isInMyTvShowList(tvShow)">Remove Show</md-button>
-      </md-card-actions>
     </md-card>
   </div>
 </div>
