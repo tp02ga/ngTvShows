@@ -10,6 +10,16 @@
   <div ng-repeat="tvShow in vm.myTvShows">
     <md-card>
       <img class="md-card-image" src="https://image.tmdb.org/t/p/w500/{{ tvShow.poster_path }}" style="width: 10em; margin: 0 auto;" />
+
+      <md-card-content>
+        <p>
+          Tv show id: {{ tvShow.id }} <br/>
+          First Aired on: {{ tvShow.tvInfo.first_air_date }} <br/>
+          Number of Seasons: {{ tvShow.tvInfo.number_of_seasons }} <br/>
+          Next Episode: {{ tvShow.tvInfo.nextEpisode }} <br/>
+          In Production: {{ tvShow.tvInfo.in_production }}
+        </p>
+      </md-card-content>
     </md-card>
   </div>
 </div>

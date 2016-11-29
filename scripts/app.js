@@ -28,3 +28,19 @@ var myTvShows = [];
 tvShowsApp.factory("tvShowFactory", function () {
   return {"myTvShows" : myTvShows};
 });
+
+tvShowsApp.factory("tvShowInfoService", function ($http) {
+  var getTvInfo = function (tvId) { 
+    return $http.get("https://api.themoviedb.org/3/tv/"+tvId+"?api_key=90845d69d5a590eb09231fc08b47e616");
+  }
+
+  return {"getTvInfo" : getTvInfo};
+});
+
+tvShowsApp.factory("tvShowEpisodeService", function ($http) {
+  var getEpisodeInfo = function (tvId, seasonNumber) {
+    return $http.get("https://api.themoviedb.org/3/tv/"+tvId+"/season/"+seasonNumber+"?api_key=90845d69d5a590eb09231fc08b47e616")
+  }
+
+  return {"getEpisodeInfo" : getEpisodeInfo};
+});
