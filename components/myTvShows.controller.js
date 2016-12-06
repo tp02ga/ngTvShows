@@ -4,7 +4,7 @@
           var vm = this;
          
           vm.currentNavItem = "myTvShowsNav";
-          vm.myTvShows = tvShowFactory.myTvShows;
+          vm.myTvShows = tvShowFactory.ref;
 
           for (tvShow of vm.myTvShows)
           {
