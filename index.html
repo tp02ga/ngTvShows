@@ -9,10 +9,37 @@
   <ui-view></ui-view>
 
   <script type="text/javascript" src="/node_modules/angular/angular.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBG09WNIm0zLISVDoCkKEOfWbet44V7Dek",
+      authDomain: "ngtvshowsapp.firebaseapp.com",
+      databaseURL: "https://ngtvshowsapp.firebaseio.com",
+      storageBucket: "ngtvshowsapp.appspot.com",
+      messagingSenderId: "904491150440"
+    };
+    firebase.initializeApp(config);
+
+    firebase.auth().signInWithEmailAndPassword('trevor@craftycodr.com', 'tGL4XG&Z').catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+
+      console.log("Error Code: " + errorCode);
+      console.log("Error Message: " + errorMessage);
+    });
+    
+  </script>
+
+  <script src="https://cdn.firebase.com/libs/angularfire/2.1.0/angularfire.min.js"></script>
+
   <script type="text/javascript" src="/node_modules/angular-material/angular-material.js"></script>
   <script type="text/javascript" src="/node_modules/angular-aria/angular-aria.js"></script>
   <script type="text/javascript" src="/node_modules/angular-animate/angular-animate.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
+  <script type="text/javascript" src="/components/myTvShows.factory.js"></script>
   <script type="text/javascript" src="/components/tvShows.controller.js"></script>
   <script type="text/javascript" src="/components/myTvShows.controller.js"></script>
   <script type="text/javascript" src="/components/movies.controller.js"></script>

@@ -6,7 +6,7 @@
         vm.addTvShow = addTvShow;
         vm.currentNavItem = "tvShowsNav";
         vm.isInMyTvShowList = isInMyTvShowList;
-        vm.myTvShows = tvShowFactory.myTvShows;
+        vm.myTvShows = tvShowFactory.ref;
         vm.removeTvShow = removeTvShow;
 
         $http.get("https://api.themoviedb.org/3/discover/tv?sort_by=popularity.desc&api_key=90845d69d5a590eb09231fc08b47e616")
@@ -17,13 +17,14 @@
               });
 
         function addTvShow (tvShow) {
-          vm.myTvShows.push(tvShow);
+          vm.myTvShows.$add(tvShow);
         }
 
         function removeTvShow (tvShow) {
           var index = getTvShowIndex(tvShow);
+          var data = vm.myTvShows[index];
 
-          vm.myTvShows.splice(index, 1);
+          vm.myTvShows.$remove(data);
         }
 
         function isInMyTvShowList (tvShow) {
