@@ -1,4 +1,4 @@
-var tvShowsApp = angular.module("ngTvShows", ['ui.router', 'ngMaterial', 'firebase'])
+var tvShowsApp = angular.module("ngTvShows", ['ui.router', 'ngMaterial'])
                          .config(function ($stateProvider) {
 
                            $stateProvider
@@ -22,6 +22,12 @@ var tvShowsApp = angular.module("ngTvShows", ['ui.router', 'ngMaterial', 'fireba
                                controller: "moviesController as vm"
                              });
                          });
+
+var myTvShows = [];
+
+tvShowsApp.factory("tvShowFactory", function () {
+  return {"myTvShows" : myTvShows};
+});
 
 tvShowsApp.factory("tvShowInfoService", function ($http) {
   var getTvInfo = function (tvId) { 
